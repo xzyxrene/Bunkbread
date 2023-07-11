@@ -61,17 +61,24 @@
         <nav class="mainmenu mobile-menu">
             <ul>
                 <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./rooms.html">Rooms</a></li>
                 <li><a href="./about-us.html">About Us</a></li>
-                <li><a href="./room-details.html">Pages</a>
+                <li><a href="./rooms.html">Rooms</a>
                     <ul class="dropdown">
-                        <li><a href="#">Room Details</a></li>
-                        <li><a href="#">Deluxe Room</a></li>
+                        <li><a href="./rooms.html">Mixed Dorm</a></li>
+                        <li><a href="./rooms.html">Female Dorm</a></li>
+                        <li><a href="./rooms.html">Private Rooms</a></li>
+                    </ul>
+                </li>
+                <!-- <li><a href="#">Pages</a>
+                    <ul class="dropdown">
+                        <li><a href="./room-details.html">Room Details</a></li>
+                        <li><a href="./blog-details.html">Blog Details</a></li>
                         <li><a href="#">Family Room</a></li>
                         <li><a href="#">Premium Room</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">News</a></li>
+                <li><a href="./blog.html">News</a></li> -->
+                <li><a href="./booking.html">Booking</a></li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -139,9 +146,15 @@
                             <nav class="mainmenu">
                                 <ul>
                                     <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./rooms.html">Rooms</a></li>
                                     <li><a href="./about-us.html">About Us</a></li>
-                                    <li><a href="#">Pages</a>
+                                    <li><a href="./rooms.html">Rooms</a>
+                                        <ul class="dropdown">
+                                            <li><a href="./rooms.html">Mixed Dorm</a></li>
+                                            <li><a href="./rooms.html">Female Dorm</a></li>
+                                            <li><a href="./rooms.html">Private Rooms</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./room-details.html">Room Details</a></li>
                                             <li><a href="./blog-details.html">Blog Details</a></li>
@@ -149,7 +162,8 @@
                                             <li><a href="#">Premium Room</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./blog.html">News</a></li>
+                                    <li><a href="./blog.html">News</a></li> -->
+                                    <li><a href="./booking.html">Booking</a></li>
                                     <li><a href="./contact.html">Contact</a></li>
                                 </ul>
                             </nav>
@@ -177,17 +191,35 @@
                 </div>
                 <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
                     <div class="booking-form">
-                        <h3>Reserve your bed :</h3>
+                        <h3>Bed/ Room Status :</h3>
                         <form action="#">
                             <div class="check-date">
                                 <input type="text" class="date-input" id="date-in" placeholder="Check-in">
-                                <i class="icon_calendar"></i>
-                            </div>
-                            <div class="check-date">
+                                <h4>→</h4>
                                 <input type="text" class="date-input" id="date-out" placeholder="Check-out">
-                                <i class="icon_calendar"></i>
                             </div>
-                            <div class="select-option">
+                            <div class="availability-check">
+                                <a><u>Change dates for booking?</u></a>
+                            </div>
+                            <div class="real-time-availability">
+                                <div class="row">
+                                    <div class="col-md-5 rt-availability-unit">
+                                        <p><span>0 Beds</span><br>Mixed Dorm<br>Non-AC</p>
+                                    </div>
+                                    <div class="col-md-5 rt-availability-unit">
+                                        <p><span>0 Beds</span><br>Mixed Dorm<br>AC</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5 rt-availability-unit">
+                                        <p><span>0 Beds</span><br>Female Dorm<br>Non-AC</p>
+                                    </div>
+                                    <div class="col-md-5 rt-availability-unit">
+                                        <p><span>0 Nos</span><br>Private Room</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="select-option">
                                 <label for="guest">Guests:</label>
                                 <select id="guest">
                                     <option value="">2 Adults</option>
@@ -200,8 +232,14 @@
                                     <option value="">1 Room</option>
                                     <option value="">2 Room</option>
                                 </select>
+                            </div> -->
+                            <button type="submit">Book for today!</button>
+                            <div class="refresh">
+                                <a href="./index.html">
+                                    <i class="icon_refresh"></i>
+                                    &nbsp;<u>Refresh for current status.</u>
+                                </a>
                             </div>
-                            <button type="submit">Check Availability</button>
                         </form>
                     </div>
                 </div>

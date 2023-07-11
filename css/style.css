@@ -311,6 +311,17 @@ ul, ol {
 	color: #ffffff;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	border: 1px solid #ffde17;
+	border-radius: 2px;
+}
+.top-nav .tn-right .bk-btn:hover {
+	border: 1px solid #ffde17;
+	border-radius: 2px;
+	color: #ffde17;
+	background: none;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
 }
 .top-nav .tn-right .language-option {
 	display: inline-block;
@@ -520,7 +531,9 @@ ul, ol {
 }
 .booking-form form .check-date {
 	position: relative;
-	margin-bottom: 15px;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .booking-form form .check-date label {
 	font-size: 14px;
@@ -529,9 +542,10 @@ ul, ol {
 	margin-bottom: 10px;
 }
 .booking-form form .check-date input {
-	width: 100%;
+	width: 45%;
 	height: 50px;
-	border: 1px solid #ebebeb;
+	border: 1px solid #ffffff83;
+	background: #ffffff83;
 	border-radius: 2px;
 	font-size: 16px;
 	color: #19191a;
@@ -544,6 +558,16 @@ ul, ol {
 	position: absolute;
 	right: 18px;
 	bottom: 17px;
+}
+.booking-form form .availability-check{
+	margin-bottom: 15px;
+}
+.booking-form form .real-time-availability .row{
+	justify-content: space-evenly;
+}
+.booking-form form .real-time-availability .rt-availability-unit{
+	background: #ffffff83;
+	margin-bottom: 15px;
 }
 .booking-form form .select-option {
 	margin-bottom: 15px;
@@ -594,7 +618,30 @@ ul, ol {
 	background: 0;
 	width: 100%;
 	height: 46px;
-	margin-top: 30px;
+	margin-top: 15px;
+}
+.booking-form form button:hover {
+	border: none;
+	background: #ffdc17;
+	color: white;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-box-shadow: 0px 9px 15px rgba(25, 25, 26, 0.05);
+	box-shadow: 0px 9px 15px rgba(25, 25, 26, 0.05);
+}
+.booking-form form .refresh {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 5px;
+}
+.booking-form form a:visited {
+	color: #000;
+}
+.booking-form form a:hover {
+	color: #ffde17;
+	cursor: pointer;
 }
 .hero-slider {
 	position: absolute;
@@ -2128,6 +2175,15 @@ ul, ol {
 		color: #ffffff;
 		text-transform: uppercase;
 		letter-spacing: 2px;
+	}
+	.offcanvas-menu-wrapper .header-configure-area .bk-btn:hover {
+		border: 1px solid #ffde17;
+		border-radius: 2px;
+		color: #ffde17;
+		background: none;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
 	}
 	.offcanvas-menu-wrapper .mainmenu {
 		display: none;
