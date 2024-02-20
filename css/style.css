@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 [Table of contents]
 
-1.  Template default CSS
+1.  Default CSS
 	1.1	Variables
 	1.2	Mixins
 	1.3	Flexbox
@@ -148,8 +148,8 @@ input, label{
 	background: #ffffff;
 }
 .loader {
-	width: 40px;
-	height: 40px;
+	width: 100px;
+	height: 100px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -158,6 +158,14 @@ input, label{
 	border-radius: 60px;
 	animation: loader 0.8s linear infinite;
 	-webkit-animation: loader 0.8s linear infinite;
+}
+.av-loader {
+    border-radius: 50%;
+	width: 40px;
+    height: 40px;
+	top: 50%;
+	left: 50%;
+    animation: loader 2s linear infinite;
 }
 @keyframes loader {
 	0% {
@@ -576,6 +584,14 @@ input, label{
 .booking-form form .real-time-availability .rt-availability-unit{
 	background: #ffffff83;
 	margin-bottom: 15px;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+}
+.rt-availability-unit h6, .av-loader {
+	font-weight: 500;
+	margin: 15px auto;
+	text-align: center;
 }
 .booking-form form .select-option {
 	margin-bottom: 15px;
@@ -627,6 +643,7 @@ input, label{
 	width: 100%;
 	height: 46px;
 	margin-top: 15px;
+	background-color: #00000030;
 }
 .booking-form form button:hover {
 	border: none;
@@ -963,7 +980,7 @@ input, label{
 -----------------------*/
 
 .footer-section {
-	background: #222736;
+	background: #262626;
 }
 .footer-section .footer-text {
 	padding: 80px 0 30px;
@@ -989,7 +1006,7 @@ input, label{
 	line-height: 40px;
 	text-align: center;
 	color: #ffffff;
-	border: 1px solid #5A4D48;
+	border: 1px solid #818181;
 	border-radius: 50%;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
@@ -1038,11 +1055,11 @@ input, label{
 	width: 100%;
 	height: 50px;
 	border-radius: 2px;
-	background: #393D4A;
+	background: #4a4539;
 	border: none;
 	padding-left: 20px;
 	font-size: 16px;
-	color: #707079;
+	color: #b6b6b6;
 }
 .footer-section .footer-text .ft-newslatter .fn-form button {
 	position: absolute;
@@ -1057,7 +1074,7 @@ input, label{
 	border-radius: 0 2px 2px 0;
 }
 .footer-section .copyright-option {
-	background: rgba(16, 20, 31, 0.2);
+	background: rgba(24, 24, 24, 0.2);
 	padding: 20px 0;
 }
 .footer-section .copyright-option ul li {
@@ -1074,7 +1091,7 @@ input, label{
 }
 .footer-section .copyright-option .co-text {
 	font-size: 16px;
-	color: #707079;
+	color: #70707a;
 	text-align: right;
 }
 /* --------------------------------- Other Pages Styles ----------------------------------- */

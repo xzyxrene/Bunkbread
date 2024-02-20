@@ -3,11 +3,31 @@
 (function ($) {
 
     /*------------------
+        Custom Functions
+    --------------------*/
+    function reloadRtAvt() {
+
+        if ($("li.active").eq(0).text() == 'Home'){
+            var room = ['Non-AC Mixed', 'AC Mixed', 'Non-AC Female', 'Private Room'];
+            $.get("https://script.google.com/macros/s/AKfycbxluCazuHqyC7e_yP1v-us56ubD-LdeO0kUuc7v-F1pljYLPsQPUa3slOVbn9zEXW21pg/exec", (data, status)=>{
+                $('.rt-availability-unit').each(function (i) {
+                    if (i != 3) 
+                    $(this).html(`<h6>${data.availability[i]} beds<br>in ${room[i]} Dorm</h6>`);
+                    else
+                    $(this).html(`<h6>${data.availability[i]} rooms<br>in ${room[i]}</h6>`);
+                });
+            });
+        }
+    }
+
+    /*------------------
         Preloader
     --------------------*/
     $(window).on('load', function () {
+        
         $(".loader").fadeOut();
         $("#preloder").delay(200).fadeOut("slow");
+        reloadRtAvt();
     });
 
     /*------------------
@@ -97,4 +117,60 @@
 	--------------------*/
     $("select").niceSelect();
 
+    /*------------------
+		Custom jQuery
+	--------------------*/
+    // const { onRequest } = require('firebase-functions/v2/https');
+    // const { defineInt, defineString } = require('firebase-functions/params');
+
+    // For Home Tab:
+
+    let today = new Date();
+
+    $(".today-in").attr("value", `${today.getDate()} / ${today.getMonth() + 1} / ${today.getFullYear()}`);
+    $(".today-out").attr("value", `${today.getDate() + 1} / ${today.getMonth() + 1} / ${today.getFullYear()}`);
+
+    $(".full-booking").click(function() {
+    
+        $("html, body").animate({
+          scrollTop: $(".availability-section").offset().top
+        }, 1000, "easeOutSine");
+    });
+
+    $('#refresh-av').click(()=>{
+        $('.rt-availability-unit').each(function(i){
+            $(this).html(`<div class="av-loader"></div>`);
+        });
+        reloadRtAvt();
+    });
+
+    var checkInPicker = new Pikaday({
+        field: document.getElementById('dateCheckIn'),
+        format: 'Do MMM YYYY',
+        minDate: today,
+        onSelect: function() {
+            
+            var selectedDate = this.getDate();
+            var nextDay = new Date(selectedDate);
+            nextDay.setDate(selectedDate.getDate() + 1);
+            checkOutPicker.setMinDate(nextDay);
+            
+            if (checkOutPicker.getDate() <= selectedDate) {
+                checkOutPicker.setDate(nextDay);
+            }
+        }
+    });
+
+    var checkOutPicker = new Pikaday({
+        field: document.getElementById('dateCheckOut'),
+        format: 'Do MMM YYYY',
+        minDate: today,
+    });
+    
+    // For Contact Tab:
+
+    $(".contact-form").attr("action", "https://script.google.com/macros/s/AKfycbwo_Ydt6pzqFaMRU9_XgB2fPP7oyLNdNO2wGDofyy9QNnx_purF6ZInRzboOec2SVGA/exec");
+
 })(jQuery);
+
+window.history.replaceState('','','/');
